@@ -55,12 +55,16 @@ $ sh ./craftStarter.sh
 
 Install CraftCMS at [http://localhost:8081/index.php?p=admin/install](http://localhost:8081/index.php?p=admin/install)
 
-Docker Containers: craft_web & craft_db
-Port: 8081
-Database Settings
-Host: craft_db:3036
-Root Password: adminpwd
-Username: admin
-Password: adminpwd
-Default Database: craftdb
-Project Config Enabled config/general.php
+| Container Info     |                      |
+| ------------------ | -------------------- |
+| Docker Containers: | craft_web & craft_db |
+| Port:              | 8081                 |
+
+| Database Settings      |                    |
+| ---------------------- | ------------------ |
+| Host:                  | craft_db:3036      |
+| Root Password:         | adminpwd           |
+| Username:              | admin              |
+| Password:              | adminpwd           |
+| Default Database:      | craftdb            |
+| Project Config Enabled | config/general.php |

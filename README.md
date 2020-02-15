@@ -8,7 +8,7 @@ Modified the original source to work easily on Mac docker environment.
 
 - Added bridge networks
 - Mounted local volume for MYSQL container so it won't erase after docker-compose down and docker-compose up
-  Original source is from [bshelling](https://github.com/bshelling/craft-mac-n-cheez)
+- Original source is from [bshelling](https://github.com/bshelling/craft-mac-n-cheez)
 
 ## Settings
 

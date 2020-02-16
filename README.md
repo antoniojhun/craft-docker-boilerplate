@@ -1,4 +1,4 @@
-# Craft 3 Docker
+# Craft 3 Docker Boilerplate
 
 Easily create a CraftCMS development environment with Docker.
 
@@ -58,11 +58,12 @@ Install CraftCMS at [http://localhost:8081/index.php?p=admin/install](http://loc
 | Container Info     |                      |
 | ------------------ | -------------------- |
 | Docker Containers: | craft_web & craft_db |
-| Port:              | 8081                 |
+| Site Port:         | 8081                 |
+| Database Port:     | 3308                 |
 
 | Database Settings      |                    |
 | ---------------------- | ------------------ |
-| Host:                  | craft_db:3036      |
+| Host:                  | craft_db:3306      |
 | Root Password:         | adminpwd           |
 | Username:              | admin              |
 | Password:              | adminpwd           |

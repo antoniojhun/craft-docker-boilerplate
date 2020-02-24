@@ -81,7 +81,7 @@ then
         echo "    depends_on:" >> docker-compose.yml
         echo "      - mysql" >> docker-compose.yml
         echo "    networks:" >> docker-compose.yml
-        echo "      - internal:" >> docker-compose.yml
+        echo "      - internal" >> docker-compose.yml
         echo "  mysql:" >> docker-compose.yml
         echo "    image: mysql:5.7" >> docker-compose.yml
         echo "    container_name: ${containerName}_db" >> docker-compose.yml
@@ -91,11 +91,11 @@ then
         echo "      MYSQL_PASSWORD: ${userPassword}" >> docker-compose.yml
         echo "      MYSQL_DATABASE: ${databaseName}" >> docker-compose.yml
         echo "    networks:" >> docker-compose.yml
-        echo "      - internal:" >> docker-compose.yml
+        echo "      - internal" >> docker-compose.yml
         echo "    volumes:" >> docker-compose.yml
         echo "      - mysql_data:/var/lib/mysql" >> docker-compose.yml
         echo "    ports:" >> docker-compose.yml
-        echo "      - ${dbPortNumber}:80" >> docker-compose.yml
+        echo "      - ${dbPortNumber}:3306" >> docker-compose.yml
         echo "" >> docker-compose.yml
         echo "networks:" >> docker-compose.yml
         echo "  internal:" >> docker-compose.yml
@@ -111,7 +111,7 @@ then
         echo "${yellow}Craft Mac-N-Cheez Installation Complete"
         echo "${white}****************************************************************"
         echo " "
-        echo "Install CraftCMS at ${yellow}http://localhost:${portNumber}/index.php?p=admin ${white}"
+        echo "Install CraftCMS at ${yellow}http://localhost:${portNumber}/index.php?p=admin/install ${white}"
         echo " "
         echo "Site Port:${yellow} ${portNumber}                                            " 
         echo "Database Port:${yellow} ${dbPortNumber}                                            " 
@@ -120,6 +120,7 @@ then
         echo "${white}Username:${yellow} ${userName}                                           " 
         echo "${white}Password:${yellow} ${userPassword}                                          " 
         echo "${white}Default Database:${yellow} ${databaseName}                                          " 
+        echo "${white}Database Host: ${yellow} ${containerName}_db                                        " 
         if [$enableProjectConfig == 'y' ] || [$enableProjectConfig == 'Y' ]
         then
         echo "${white}Project Config Enabled config/general.php${white}"
@@ -174,7 +175,7 @@ then
         echo "    depends_on:" >> docker-compose.yml
         echo "      - mysql" >> docker-compose.yml
         echo "    networks:" >> docker-compose.yml
-        echo "      - internal:" >> docker-compose.yml
+        echo "      - internal" >> docker-compose.yml
         echo "  mysql:" >> docker-compose.yml
         echo "    image: mysql:5.7" >> docker-compose.yml
         echo "    container_name: craft_db" >> docker-compose.yml
@@ -184,7 +185,7 @@ then
         echo "      MYSQL_PASSWORD: adminpwd" >> docker-compose.yml
         echo "      MYSQL_DATABASE: craftdb" >> docker-compose.yml
         echo "    networks:" >> docker-compose.yml
-        echo "      - internal:" >> docker-compose.yml
+        echo "      - internal" >> docker-compose.yml
         echo "    volumes:" >> docker-compose.yml
         echo "      - mysql_data:/var/lib/mysql" >> docker-compose.yml
         echo "    ports:" >> docker-compose.yml
@@ -216,7 +217,8 @@ then
         echo "${white}Root Password: ${yellow}adminpwd                                    " 
         echo "${white}Username: ${yellow}admin                                           " 
         echo "${white}Password: ${yellow}adminpwd                                          " 
-        echo "${white}Default Database: ${yellow}craftdb                                          " 
+        echo "${white}Default Database: ${yellow}craftdb                                    "
+        echo "${white}Database Host: ${yellow}craft_db                                          " 
         if [ $enableProjectConfig == 'y' ] || [ $enableProjectConfig == 'Y' ]
         then
         echo "${white}Project Config Enabled config/general.php${white}"
